@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link href="main.css" type="text/css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://use.typekit.net/rbk8van.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" type="text/css" href="responsive-menu/component.css" />
+    <script src="js/modernizr.custom.js"></script>
+    <link rel="stylesheet" href="StepNav/css/reset.css">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <%= stylesheet_link_tag :site %>
+    <%= javascript_include_tag :all %>
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "Middleman" %></title>
+</head>
+
+  <body class="<%= page_classes %>">
+    <nav>
+            <img class="logo" src="images/logo.svg" alt="Liquideed">
+          <div class="container">
+           <div class="main">
+            <section class="buttonset">
+            <input class="mobile-nav showRightPush" type="image" src="images/menu.svg" alt="Menu">
+           </section>
+           </div>
+           </div>
+
+              <div class="cbp-spmenu-push">
+              <div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right navigation" id="cbp-spmenu-s2">
+              <ul class="nav-list" id="para1">
+      <input class="x-icon showRightPush" type="image" src="images/x.svg" alt="Menu">
+      <a href="/sellers.html">Sellers</a>
+      <a href="#">Buyers</a>
+      <a href="#">Brokers</a>
+      <a href="#">About</a>
+      <div class="top-buttons">
+                  <li><a href="#" class="login-button">Log In</a></li>
+                  <li><a href="#" class="signup-button">Sign Up</a></li>
+                 </div>
+                 </ul>
+                 </div>
+                 </div>
+    </nav>
+
+    <%= yield %>
+          <footer class="footer">
+          <div class="footer-elements">
+                    <img src="images/droplogo.svg" class="logo-mark" alt="Liquideed Logo">
+                    <img src="images/logo-white.svg" class="logo-white" alt="Liquideed">
+                    <p class="footer-text"> 222 W Merchandise Mart Plaza, Suite 1212, Chicago, IL 60654  |  &copy; Copyright Liquideed RE LLC 2016, all rights reserved. Please view our <u>Terms of Use</u>.</p>
+         </div>
+                    <ul class="footer-list">
+                          <li class="social-icon" <a href="#" target="_blank"><img src="images/facebook.svg" alt="Facebook"></a></li>
+                          <li class="social-icon" <a href="#" target="_blank"><img src="images/twitter.svg" alt="Twitter"></a></li>
+                          <li class="social-icon" <a href="#" target="_blank"><img src="images/linkedin.svg" alt="Linkedin"></a></li>
+                     </ul>
+          </footer>
+
+  <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie  - SCRIPT FOR NAVIGATION-->
+    <script src="responsive-menu/classie.js"></script>
+    <script>
+      var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+        showRight = document.getElementById( 'showRight' ),
+        showRightPush = document.getElementById( 'showRightPush' ),
+        body = document.body;
+
+
+      showRightPush.onclick = function() {
+        classie.toggle( this, 'active' );
+        classie.toggle( body, 'cbp-spmenu-push-toleft' );
+        classie.toggle( menuRight, 'cbp-spmenu-open' );
+        disableOther( 'showRightPush' );
+      };
+
+      function disableOther( input ) {
+
+        if( input !== 'showRightPush' ) {
+          classie.toggle( showRightPush, 'disabled' );
+        }
+      }
+    </script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+         <script src="StepNav/js/index.js"></script>
+
+</body>
+</html>
